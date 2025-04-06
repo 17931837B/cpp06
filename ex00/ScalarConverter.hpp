@@ -1,21 +1,19 @@
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
 # include <iostream>
 # include <string>
 # include <exception>
 
-class Bureaucrat
+class ScalarConverter
 {
 	private:
-		const std::string	name_;
-		int					grade_;
+		ScalarConverter();
+		~ScalarConverter();
+		ScalarConverter(const ScalarConverter &copy);
+		ScalarConverter	&operator=(const ScalarConverter &src);
 	public:
-		Bureaucrat();
-		Bureaucrat(const std::string name, int grade);
-		~Bureaucrat();
-		Bureaucrat(const Bureaucrat &copy);
-		Bureaucrat	&operator=(const Bureaucrat &src);
+		static void	convert(const std::string& str);
 };
 
 #endif
