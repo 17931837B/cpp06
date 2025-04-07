@@ -26,10 +26,14 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& src)
 
 void	ScalarConverter::convert(const std::string& str)
 {
-	// std::string	str_;
-	char		char_;
-	size_t		len = str.length();
+	char	charValue;
+	size_t	len = str.length();
+	int		flagInt;
 
-	char_ = isChar(str, len);
-	std::cout << char_ << std::endl;
+	charValue = deformeChar(str, len);
+	if (charValue != 0)
+		outputChar(charValue);
+	flagInt = isInt(str);
+	if (flagInt)
+		outputInt(str, flagInt);
 }
