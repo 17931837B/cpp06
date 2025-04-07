@@ -28,3 +28,26 @@ int	isInt(const std::string& str)
 		return (2);
 	return (1);
 }
+
+bool	isFloat(const std::string& str, size_t& keyTen)
+{
+	size_t	i = 0;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (i < keyTen)
+	{
+		if (!isdigit(str[i]))
+			return (false);
+		i++;
+	}
+	i++;
+	while (str[i] && str[i] != 'f')
+	{
+		if (!isdigit(str[i]))
+			return (false);
+		i++;
+	}
+	if (str[i] == 'f' && !str[i + 1])
+		return (true);
+	return (false);
+}

@@ -23,6 +23,7 @@ char	deformeChar(const std::string& str, size_t& len);
 void	outputChar(char char_);
 int		isInt(const std::string& string);
 void	outputInt(const std::string& str, int& flagInt);
-
+bool	isFloat(const std::string& str, size_t& keyTen);
+void	outputFloat(const std::string& str);
 
 #endif
