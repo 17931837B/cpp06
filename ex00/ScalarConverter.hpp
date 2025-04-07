@@ -1,9 +1,9 @@
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 
-# include <iostream>
-# include <string>
-# include <exception>
+#include <iostream>
+#include <string>
+#include <exception>
 
 class ScalarConverter
 {
@@ -15,5 +15,7 @@ class ScalarConverter
 	public:
 		static void	convert(const std::string& str);
 };
+
+char	isChar(const std::string& str, size_t& len);
 
 #endif

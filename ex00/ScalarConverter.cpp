@@ -23,3 +23,13 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& src)
 	(void)src;
 	return (*this);
 }
+
+void	ScalarConverter::convert(const std::string& str)
+{
+	// std::string	str_;
+	char		char_;
+	size_t		len = str.length();
+
+	char_ = isChar(str, len);
+	std::cout << char_ << std::endl;
+}
