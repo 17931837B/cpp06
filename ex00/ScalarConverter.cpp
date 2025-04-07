@@ -29,6 +29,8 @@ void	ScalarConverter::convert(const std::string& str)
 	char	charValue;
 	size_t	len = str.length();
 	int		flagInt;
+	size_t	keyTen = str.find('.');
+	size_t	keyF = str.find('f');
 
 	charValue = deformeChar(str, len);
 	if (charValue != 0)
@@ -36,4 +38,9 @@ void	ScalarConverter::convert(const std::string& str)
 	flagInt = isInt(str);
 	if (flagInt)
 		outputInt(str, flagInt);
+	if (keyTen != std::string::npos && keyF != std::string::npos)
+	{
+		if (isFloat(str, keyTen))
+			outputFloat(str);
+	}
 }
