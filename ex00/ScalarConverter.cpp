@@ -38,9 +38,14 @@ void	ScalarConverter::convert(const std::string& str)
 	flagInt = isInt(str);
 	if (flagInt)
 		outputInt(str, flagInt);
-	if (keyTen != std::string::npos && keyF != std::string::npos)
+	if (keyTen != std::string::npos)
 	{
-		if (isFloat(str, keyTen))
-			outputFloat(str);
+		if (keyF != std::string::npos)
+		{
+			if (isFloat(str, keyTen))
+				outputFloat(str);
+		}
+		else
+			outputDouble(str);
 	}
 }
