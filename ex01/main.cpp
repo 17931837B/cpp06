@@ -13,12 +13,13 @@ int	main()
 
 	if (originalPtr == deserializedPtr)
 	{
-		std::cout << "シリアライズとデシリアライズは成功しました！" << std::endl;
-		std::cout << "元のポインタのアドレス: " << originalPtr << std::endl;
-		std::cout << "デシリアライズされたポインタのアドレス: " << deserializedPtr << std::endl;
-		std::cout << "デシリアライズされたデータ: n = " << deserializedPtr->n << ", c = '" << deserializedPtr->c << "', f = " << deserializedPtr->f << std::endl;
+		std::cout << "Serialization and deserialization were successful!" << std::endl;
+		std::cout << "Address of original pointer:	" << originalPtr << std::endl;
+		std::cout << "Address of serialized pointer:	" << deserializedPtr << std::endl;
+		std::cout << "Deserialized data" << std::endl;
+		std::cout << "(int) = " << deserializedPtr->n << "\n(char) = '" << deserializedPtr->c << "'\n(float) = " << deserializedPtr->f << std::endl;
 	}
 	else
-		std::cout << "シリアライズとデシリアライズは失敗しました。" << std::endl;
+		std::cout << "Serialization and deserialization failed." << std::endl;
 	return (0);
 }
