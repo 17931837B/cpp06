@@ -1,14 +1,15 @@
 #include "ScalarConverter.hpp"
 
-void	outputChar(char char_)
+int	outputChar(char char_)
 {
 	std::cout << "char: " << "'" << char_ << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(char_) << std::endl;
 	std::cout << "float: " << static_cast<float>(char_) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(char_) << ".0" << std::endl;
+	return (1);
 }
 
-void	outputInt(const std::string& str, int& flagInt)
+int	outputInt(const std::string& str, int& flagInt)
 {
 	long	num = std::atol(str.c_str());
 
@@ -26,9 +27,10 @@ void	outputInt(const std::string& str, int& flagInt)
 		std::cout	<< static_cast<int>(num) << std::endl;
 	std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
+	return (1);
 }
 
-void	outputFloat(const std::string& str)
+int	outputFloat(const std::string& str)
 {
 	float	num = std::atof(str.c_str());
 
@@ -55,9 +57,10 @@ void	outputFloat(const std::string& str)
 		std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
 	else
 		std::cout << "double: " << static_cast<double>(num) << std::endl;
+	return (1);
 }
 
-void	outputDouble(const std::string& str)
+int	outputDouble(const std::string& str)
 {
 	float	num = std::atof(str.c_str());
 
@@ -86,4 +89,5 @@ void	outputDouble(const std::string& str)
 		std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
 	else
 		std::cout << "double: " << static_cast<double>(num) << std::endl;
+	return (1);
 }

@@ -20,11 +20,12 @@ class ScalarConverter
 };
 
 char	deformeChar(const std::string& str, size_t& len);
-void	outputChar(char char_);
+int		outputChar(char char_);
 int		isInt(const std::string& string);
-void	outputInt(const std::string& str, int& flagInt);
+int		outputInt(const std::string& str, int& flagInt);
 bool	isFloat(const std::string& str, size_t& keyTen);
-void	outputFloat(const std::string& str);
-void	outputDouble(const std::string& str);
+int		outputFloat(const std::string& str);
+int		outputDouble(const std::string& str);
+int		checkSpecial(const std::string& str);
 
 #endif

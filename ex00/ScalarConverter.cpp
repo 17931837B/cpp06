@@ -31,21 +31,26 @@ void	ScalarConverter::convert(const std::string& str)
 	int		flagInt;
 	size_t	keyTen = str.find('.');
 	size_t	keyF = str.find('f');
+	int		isOutput = 0;
 
 	charValue = deformeChar(str, len);
 	if (charValue != 0)
-		outputChar(charValue);
+		isOutput = outputChar(charValue);
 	flagInt = isInt(str);
 	if (flagInt)
-		outputInt(str, flagInt);
+		isOutput = outputInt(str, flagInt);
 	if (keyTen != std::string::npos)
 	{
 		if (keyF != std::string::npos)
 		{
 			if (isFloat(str, keyTen))
-				outputFloat(str);
+				isOutput = outputFloat(str);
 		}
 		else
-			outputDouble(str);
+			isOutput = outputDouble(str);
 	}
+	if (!isOutput)
+		isOutput = checkSpecial(str);
+	if (!isOutput)
+		std::cout << "Incorrect input." << std::endl;
 }
