@@ -51,3 +51,32 @@ bool	isFloat(const std::string& str, size_t& keyTen)
 		return (true);
 	return (false);
 }
+
+int	checkSpecial(const std::string& str)
+{
+	if (str == "nan" || str == "nanf")
+	{
+		std::cout << "char: impossible" << std::endl; 
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+		return (1);
+	}
+	else if (str == "+inf" || str == "+inff")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: +inff" << std::endl;
+		std::cout << "double: +inf" << std::endl;
+		return (1);
+	}
+	else if (str == "-inf" || str == "-inff")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+		return (1);
+	}
+	return (0);
+}
