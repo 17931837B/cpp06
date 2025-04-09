@@ -2,22 +2,22 @@
 
 int	main()
 {
-	Data	data;
-	data.n = 42;
-	data.c = 'A';
-	data.f = 42.1956f;
+	Data	src;
+	src.n = 42;
+	src.c = 'A';
+	src.f = 42.1956f;
 
-	Data*		originalPtr = &data;
-	uintptr_t	serializedPtr = Serializer::serialize(originalPtr);
-	Data*		deserializedPtr = Serializer::deserialize(serializedPtr);
+	Data*		data_be = &src;
+	uintptr_t	tmp = Serializer::serialize(data_be);
+	Data*		data_af = Serializer::deserialize(tmp);
 
-	if (originalPtr == deserializedPtr)
+	if (data_be == data_af)
 	{
 		std::cout << "Serialization and deserialization were successful!" << std::endl;
-		std::cout << "Address of original pointer:	" << originalPtr << std::endl;
-		std::cout << "Address of serialized pointer:	" << deserializedPtr << std::endl;
-		std::cout << "Deserialized data" << std::endl;
-		std::cout << "(int) = " << deserializedPtr->n << "\n(char) = '" << deserializedPtr->c << "'\n(float) = " << deserializedPtr->f << std::endl;
+		std::cout << "Address of original pointer:	" << data_be << std::endl;
+		std::cout << "Address of serialized pointer:	" << data_af << std::endl;
+		// std::cout << "(int) = " << data_af->n << "\n(char) = '" << data_af->c << "'\n(float) = " << data_af->f << std::endl;
+		std::cout << "(int) = " << data_af->n << "\n(char) = '" << data_af->c << "'\n(float) = " << data_af->f << std::endl;
 	}
 	else
 		std::cout << "Serialization and deserialization failed." << std::endl;
