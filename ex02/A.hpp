@@ -5,7 +5,6 @@
 
 class A : public Base
 {
-	
 };
 
 #endif
