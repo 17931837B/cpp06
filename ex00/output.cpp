@@ -84,7 +84,7 @@ int	outputDouble(const std::string& str)
 	else
 		std::cout << num << 'f' << std::endl;
 	if (num < std::numeric_limits<double>::min() || num > std::numeric_limits<double>::max())
-		std::cout << "impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
 	else if (std::fabs(num - static_cast<int>(num)) < 1e-13)
 		std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
 	else
