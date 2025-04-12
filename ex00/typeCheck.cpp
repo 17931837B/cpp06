@@ -15,7 +15,7 @@ int	isInt(const std::string& str)
 	int	i = 0;
 	long	num;
 
-	if (str[0] == '-' || str[0] == '+')
+	if ((str[0] == '-' && str[1]) || (str[0] == '+' && str[1]))
 		i++;
 	while (str[i])
 	{
@@ -32,13 +32,17 @@ int	isInt(const std::string& str)
 bool	isFloat(const std::string& str, size_t& keyTen)
 {
 	size_t	i = 0;
-	if (str[i] == '+' || str[i] == '-')
+	bool	isInteger = false;
+	bool	isDecimal = false;
+
+	if ((str[i] == '+' && isdigit(str[i + 1])) || (str[i] == '-' && isdigit(str[i + 1])))
 		i++;
 	while (i < keyTen)
 	{
 		if (!isdigit(str[i]))
 			return (false);
 		i++;
+		isInteger = true;
 	}
 	i++;
 	while (str[i] && str[i] != 'f')
@@ -46,10 +50,41 @@ bool	isFloat(const std::string& str, size_t& keyTen)
 		if (!isdigit(str[i]))
 			return (false);
 		i++;
+		isDecimal = true;
 	}
+	if (!isInteger || !isDecimal)
+		return (false);
 	if (str[i] == 'f' && !str[i + 1])
 		return (true);
 	return (false);
+}
+
+bool	isDouble(const std::string& str, size_t& keyTen)
+{
+	size_t	i = 0;
+
+	bool	isInteger = false;
+	bool	isDecimal = false;
+	if ((str[i] == '+' && isdigit(str[i + 1])) || (str[i] == '-' && isdigit(str[i + 1])))
+		i++;
+	while (i < keyTen)
+	{
+		if (!isdigit(str[i]))
+			return (false);
+		i++;
+		isInteger = true;
+	}
+	i++;
+	while (str[i])
+	{
+		if (!isdigit(str[i]))
+			return (false);
+		i++;
+		isDecimal = true;
+	}
+	if (!isInteger || !isDecimal)
+		return (false);
+	return (true);
 }
 
 int	checkSpecial(const std::string& str)

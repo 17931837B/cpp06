@@ -11,7 +11,7 @@ int	outputChar(char char_)
 
 int	outputInt(const std::string& str, int& flagInt)
 {
-	long	num = std::atol(str.c_str());
+	long	num = std::atoi(str.c_str());
 
 	std::cout << "char: ";
 	if (num < 0 || num > 127)

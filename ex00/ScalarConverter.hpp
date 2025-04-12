@@ -24,6 +24,7 @@ int		outputChar(char char_);
 int		isInt(const std::string& string);
 int		outputInt(const std::string& str, int& flagInt);
 bool	isFloat(const std::string& str, size_t& keyTen);
+bool	isDouble(const std::string& str, size_t& keyTen);
 int		outputFloat(const std::string& str);
 int		outputDouble(const std::string& str);
 int		checkSpecial(const std::string& str);
