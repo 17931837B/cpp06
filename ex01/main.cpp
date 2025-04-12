@@ -15,6 +15,7 @@ int	main()
 	{
 		std::cout << "Serialization and deserialization were successful!" << std::endl;
 		std::cout << "Address of original pointer:	" << data_be << std::endl;
+		std::cout << "(int) = " << data_be->n << "\n(char) = '" << data_be->c << "'\n(float) = " << data_be->f << std::endl;
 		std::cout << "Address of serialized pointer:	" << data_af << std::endl;
 		// std::cout << "(int) = " << data_af->n << "\n(char) = '" << data_af->c << "'\n(float) = " << data_af->f << std::endl;
 		std::cout << "(int) = " << data_af->n << "\n(char) = '" << data_af->c << "'\n(float) = " << data_af->f << std::endl;
